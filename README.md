@@ -32,7 +32,8 @@ Self-hosted monitoring stack: InfluxDB, Grafana, Home Assistant, Cloudflare Tunn
 ## 💼 Experience Highlights
 
 - **BMO** - SRE Technical Lead (2023-Present)
-  - High-availability systems design
+  - High-availability systems design and implementation
+  - Pioneered AI-augmented development practices using GitHub Copilot and Claude
   - Observability with Dynatrace, Grafana, CloudWatch
   - SLO/SLA definition and tracking
 
