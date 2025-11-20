@@ -25,9 +25,9 @@ Production IoT system with 4 deployed sensors. C++ firmware with WiFi fallback, 
 **Tech:** ESP8266 · C++ · PlatformIO · InfluxDB · DS18B20 · WiFi
 
 ### [🥧 Raspberry Pi Docker Infrastructure](https://github.com/aachtenberg/raspberry-pi-docker)
-Self-hosted monitoring stack: InfluxDB, Grafana, Home Assistant, Cloudflare Tunnels.
+Production self-hosted stack: InfluxDB, Grafana, Home Assistant, Prometheus, Nginx Proxy Manager, Cloudflare Tunnels.
 
-**Tech:** Docker · InfluxDB · Grafana · Raspberry Pi · Cloudflare
+**Tech:** Docker · InfluxDB · Grafana · Prometheus · Nginx · Cloudflare · Raspberry Pi
 
 ## 💼 Experience Highlights
 
