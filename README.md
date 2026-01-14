@@ -45,15 +45,16 @@ Production self-hosted stack: InfluxDB, Grafana, Home Assistant, Prometheus, Ngi
 ## 💼 Experience Highlights
 
 - **BMO** - SRE Technical Lead (2023-Present)
-  - High-availability systems design and implementation
-  - Pioneered AI-augmented development practices using GitHub Copilot and Claude
-  - Observability with Dynatrace, Grafana, CloudWatch
-  - SLO/SLA definition and tracking
+  - High-availability systems design and AI-augmented development practices
 
-- **BlackBerry** - Principal Database Reliability Engineer
-  - 99.999% uptime for enterprise database infrastructure
-  - Multi-cloud deployments (AWS, Azure, VMware, OpenStack)
-  - Database automation at scale
+- **BlackBerry** - Senior Technical Manager (2013-2019)
+  - Led Enterprise Cloud & Data Platforms across AWS, Azure, and private clouds
+
+- **BlackBerry** - Senior Software Developer (2010-2012)
+  - Scaled BBM infrastructure to 100M+ users across distributed data centers
+
+- **Research In Motion** - Infrastructure Engineering Specialist (2007-2010)
+  - SME for BBM infrastructure and massively distributed cloud systems
 
 ## 📫 Let's Connect
 
