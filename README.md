@@ -4,20 +4,33 @@
 
 ## 🚀 Recent Work
 
-Just shipped a production IoT monitoring system in 3 weeks using AI-assisted development (after 1.5 years of procrastination!). Four ESP8266 devices → InfluxDB → Grafana → Cloudflare Tunnel.
+Building a comprehensive home IoT infrastructure using AI-assisted development:
+- **Multi-camera surveillance system** with Raspberry Pi cameras, HLS streaming, MQTT integration, and web UI
+- **LoRa sensor network** with ESP32-S3 nodes → LoRa gateway → MQTT → InfluxDB for long-range monitoring
+- **Temperature monitoring** with 4 deployed ESP8266 sensors → InfluxDB → Grafana
 
-**What I learned:** AI tools (Claude Pro, GitHub Copilot, Cline) are force multipliers for infrastructure work—I focused on architecture, security, and reliability while AI handled implementation details.
+**What I learned:** AI tools (Claude Code, Claude Pro, GitHub Copilot, Cline) are force multipliers for infrastructure work—I focused on architecture, security, and reliability while AI handled implementation details.
 
 ## 🛠️ Tech Stack
 
 **SRE/DevOps:** Terraform · Terragrunt · AWS CDK · Kubernetes · Docker · Dynatrace · Grafana · Prometheus
 **Cloud:** AWS · Azure · GCP · OpenStack · OpenNebula
 **Databases:** Postgres · InfluxDB · Cassandra · Oracle · MariaDB
-**IoT/Embedded:** ESP8266 · ESP32 · C/C++ · PlatformIO · Arduino
+**IoT/Embedded:** ESP32-S3 · ESP8266 · Raspberry Pi · LoRa · MQTT · C/C++ · PlatformIO · Arduino
 **Languages:** Python · Bash · C/C++ · Java
-**AI Tools:** GitHub Copilot · Claude Pro · Cline
+**AI Tools:** Claude Code · Claude Pro · GitHub Copilot · Cline
 
 ## 📌 Featured Projects
+
+### [📹 Raspberry Pi Camera Control](https://github.com/aachtenberg/raspberry-pi-camera-control)
+Multi-camera surveillance system with web UI, dual streaming modes (HLS/VLC), and MQTT integration. Hardware H.264 encoding with ffmpeg, real-time settings control, and system monitoring.
+
+**Tech:** Python · Raspberry Pi · HLS · MQTT · ffmpeg · Flask · Hardware H.264
+
+### [📡 ESP32 LoRa Sensor Network](https://github.com/aachtenberg/esp32-lora-sensor)
+Long-range wireless sensor network with ESP32-S3 LoRa nodes and gateway. BME280 sensors monitor temperature, humidity, and pressure with MQTT bridge for cloud integration.
+
+**Tech:** ESP32-S3 · LoRa · MQTT · BME280 · C++ · PlatformIO
 
 ### [🌡️ ESP8266 Temperature Monitoring](https://github.com/aachtenberg/esp12f_ds18b20_temp_sensor)
 Production IoT system with 4 deployed sensors. C++ firmware with WiFi fallback, InfluxDB integration, and proper secrets management.
