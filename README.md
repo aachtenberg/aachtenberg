@@ -1,6 +1,6 @@
 # Hi, I'm Andrew 👋
 
-**SRE Technical Lead @ BMO** | Building reliable systems at scale | AI-Augmented Development
+**Technical Lead | SRE & AI @ BMO** | Building reliable systems at scale | AI-Augmented Development
 
 ## 🚀 Recent Work
 
