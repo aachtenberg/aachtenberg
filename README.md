@@ -11,7 +11,7 @@ Building infrastructure and tools across IoT, observability, and community data 
 - **LoRa sensor network** with ESP32-S3 nodes → LoRa gateway → MQTT → InfluxDB for long-range monitoring
 - **Temperature monitoring** with 4 deployed ESP8266 sensors → InfluxDB → Grafana
 
-**What I learned:** AI tools (Claude Code, Claude Pro, GitHub Copilot, Cline) are force multipliers for infrastructure work — I focused on architecture, security, and reliability while AI handled implementation details. The freshet project pushed this further: the AI is also doing daily ingest agent work, plain-language synthesis of technical telemetry, and analytical scripting against historical hydrometric records.
+**What I learned:** AI tools (Claude Code, Claude Pro, GitHub Copilot, AWS Bedrock, Anthropic API) are force multipliers for infrastructure work — I focused on architecture, security, and reliability while AI handled implementation details. The freshet project pushed this further: the AI is also doing daily ingest agent work, plain-language synthesis of technical telemetry, and analytical scripting against historical hydrometric records.
 
 ## 🛠️ Tech Stack
 
@@ -20,7 +20,7 @@ Building infrastructure and tools across IoT, observability, and community data 
 **Databases:** Postgres · TimescaleDB · PostgREST · InfluxDB · Cassandra · Oracle · MariaDB
 **IoT/Embedded:** ESP32-S3 · ESP8266 · Raspberry Pi · LoRa · MQTT · C/C++ · PlatformIO · Arduino
 **Languages:** Python · Bash · C/C++ · Java · JavaScript
-**AI Tools:** Claude Code · Claude Pro · GitHub Copilot · Cline · Anthropic API (scheduled agent routines)
+**AI Tools:** Claude Code · Claude Pro · GitHub Copilot · AWS Bedrock · Anthropic API
 
 ## 📌 Featured Projects
 
