@@ -66,5 +66,6 @@ Production self-hosted stack: InfluxDB, Grafana, Home Assistant, Prometheus, Ngi
 ## 📫 Let's Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Andrew_Achtenberg-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/aachtenberg/)
+[![GitHub](https://img.shields.io/badge/GitHub-aachtenberg-181717?style=flat&logo=github)](https://github.com/aachtenberg)
 
 💡 *Always learning and always building. Right now I am exploring AI's role in SRE practices and community-data work where the stakes are real and the audience is actual neighbours.*
