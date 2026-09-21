@@ -4,30 +4,51 @@
 
 ## 🚀 Recent Work
 
-Building infrastructure and tools across IoT, observability, and community data, with AI used as part of the engineering workflow:
+Building infrastructure and tools across AI-assisted SRE, IoT, observability, and community data:
 
-- **Ottawa River freshet case file** for a community-built flood-monitoring stack covering the Ottawa River watershed with k3s, TimescaleDB, PostgREST, and a static HTML dashboard at freshet.xgrunt.com. The case file documents a post-2017 regime change in spring flood peaks at Lac Coulonge through nine illustrated exhibits, four statistical tests, daily plain-language briefs, and a calibrated seasonal probability forecast. The goal is to keep the work public, reproducible, and easy to challenge.
-- **Multi-camera surveillance system** with Raspberry Pi cameras, HLS streaming, MQTT integration, and web UI
-- **LoRa sensor network** with ESP32-S3 nodes → LoRa gateway → MQTT → InfluxDB for long-range monitoring
-- **Temperature monitoring** with 4 deployed ESP8266 sensors → InfluxDB → Grafana
+- **CFOperator** — a self-hosted AI SRE agent that triages Alertmanager alerts, investigates with Prometheus/Loki/Kubernetes tools, and opens GitOps fix PRs (never mutates a live cluster). Local Ollama by default; no phone-home.
+- **Dynatrace DQL knowledge base** — reference docs, Copilot agents, and a RAG pipeline so LLMs produce working DQL instead of hallucinated queries.
+- **snowq** — query ServiceNow REST APIs by reusing an SSO browser session (no API user or OAuth client required).
+- **Ottawa River freshet case file** — community flood-monitoring stack for the Ottawa River watershed (TimescaleDB / PostgREST / k3s) with a public case file on post-2017 spring flood peaks at Lac Coulonge.
+- **Homelab IoT** — multi-camera Raspberry Pi surveillance, ESP32 LoRa sensor network, and multi-board ESP temperature monitoring into InfluxDB / Grafana.
 
-**What I learned:** AI tools such as Claude Code, Claude Pro, GitHub Copilot, AWS Bedrock, and the Anthropic API are useful force multipliers for infrastructure work. I still steer the architecture, security, and reliability decisions, while using AI to speed up implementation, analysis, and review. The freshet project pushed this further by using scheduled agents for daily ingest, plain-language synthesis of technical telemetry, and analytical scripting against historical hydrometric records.
+**What I learned:** AI tools such as Claude Code, Claude Pro, GitHub Copilot, AWS Bedrock, and the Anthropic API are useful force multipliers for infrastructure work. I still steer the architecture, security, and reliability decisions, while using AI to speed up implementation, analysis, and review. CFOperator and the freshet project push this further: scheduled agents for sweeps and daily briefs, RAG over past investigations and hydrometric records, and keeping a human on the merge button.
 
 ## 🛠️ Tech Stack
 
-**SRE/DevOps:** Terraform · Terragrunt · AWS CDK · Kubernetes (k3s, EKS) · Docker · Dynatrace · Grafana · Prometheus · GitHub Actions
+**SRE/DevOps:** Terraform · Terragrunt · AWS CDK · OpenTofu · Kubernetes (k3s, EKS) · Docker · Dynatrace · Grafana · Prometheus · Loki · GitHub Actions · GitOps
 **Cloud:** AWS · Azure · GCP · OpenStack · OpenNebula · Cloudflare Tunnel
-**Databases:** Postgres · TimescaleDB · PostgREST · InfluxDB · Cassandra · Oracle · MariaDB
+**Databases:** Postgres · TimescaleDB · PostgREST · pgvector · InfluxDB · Cassandra · Oracle · MariaDB · ServiceNow
 **IoT/Embedded:** ESP32-S3 · ESP8266 · Raspberry Pi · LoRa · MQTT · C/C++ · PlatformIO · Arduino
-**Languages:** Python · Bash · C/C++ · Java · JavaScript
-**AI Tools:** Claude Code · Claude Pro · GitHub Copilot · AWS Bedrock · Anthropic API
+**Languages:** Python · Bash · C/C++ · Go · Java · JavaScript · TypeScript · HCL
+**AI Tools:** Claude Code · Claude Pro · GitHub Copilot · AWS Bedrock · Anthropic API · Ollama · RAG
 
 ## 📌 Featured Projects
+
+### [🤖 CFOperator — self-hosted AI SRE agent](https://github.com/aachtenberg/cfoperator)
+Alert → triage → investigate → propose a fix → open a GitOps PR → verify after merge. Runs on your hardware against your Prometheus; local Ollama is the default path. It never mutates a running cluster — the merge button stays human.
+
+**Tech:** Python · Prometheus · Alertmanager · Loki · Kubernetes · Docker · Ollama · pgvector · GitOps
 
 ### [🌊 Ottawa River Freshet: community flood monitoring + case file](https://github.com/aachtenberg/ottawa-river-freshet)
 Community-built flood-monitoring stack for the Ottawa River watershed, driven by a real need to document and statistically test a post-2017 regime change in spring flood peaks at Lac Coulonge, Quebec. The live dashboard at [freshet.xgrunt.com](https://freshet.xgrunt.com) brings Hydro-Québec, ECCC, MVCA, and Quebec Vigilance telemetry into a TimescaleDB / PostgREST stack on a homelab k3s cluster. The case file includes nine illustrated exhibits, four statistical tests, a daily plain-language brief generated by a scheduled Claude routine, and a calibrated seasonal probability forecast using Gaussian-kernel analog matching with post-2017 era weighting. It is built to be public, reproducible, opinionated, and falsifiable.
 
 **Tech:** TimescaleDB · PostgREST · k3s · Cloudflare Tunnel · Python (stdlib only) · Static HTML/SVG · Chart.js · GitHub Actions (auto-mirror) · Anthropic Claude routines · puppeteer (PNG render)
+
+### [📚 Dynatrace DQL Knowledge Base](https://github.com/aachtenberg/dynatrace-dql-kb)
+DQL reference docs, `@dql-expert` / `@dashboard-builder` Copilot agents, and a RAG pipeline aimed at syntactically correct Dynatrace Query Language and Platform dashboard JSON.
+
+**Tech:** Python · Dynatrace DQL · GitHub Copilot instructions · RAG
+
+### [🔌 snowq — ServiceNow REST via SSO session](https://github.com/aachtenberg/snow-query)
+Query ServiceNow's REST APIs from Python by reusing the cookies from an SSO browser login — no API user, OAuth client, or password. Sessions are stored locally like credentials.
+
+**Tech:** Python · Playwright · ServiceNow REST · SSO (SAML/OIDC)
+
+### [🎙️ Luna Voice Assistant](https://github.com/aachtenberg/luna-voice-assistant)
+Self-hosted voice assistant with wake word, local STT/TTS, LLM fallback chain (Claude / Ollama / Groq), and smart-home tools — privacy-first replacement for a cloud speaker.
+
+**Tech:** Python · OpenWakeWord · faster-whisper · Piper TTS · Ollama · MQTT / smart home
 
 ### [📹 Raspberry Pi Camera Control](https://github.com/aachtenberg/raspberry-pi-camera-control)
 Multi-camera surveillance system with web UI, dual streaming modes (HLS/VLC), and MQTT integration. Hardware H.264 encoding with ffmpeg, real-time settings control, and system monitoring.
@@ -39,10 +60,10 @@ Long-range wireless sensor network with ESP32-S3 LoRa nodes and gateway. BME280 
 
 **Tech:** ESP32-S3 · LoRa · MQTT · BME280 · C++ · PlatformIO
 
-### [🌡️ ESP8266 Temperature Monitoring](https://github.com/aachtenberg/esp12f_ds18b20_temp_sensor)
-Production IoT system with 4 deployed sensors. C++ firmware with WiFi fallback, InfluxDB integration, and proper secrets management.
+### [🌡️ ESP Sensor Hub](https://github.com/aachtenberg/esp-sensor-hub)
+Multi-board ESP32/ESP8266 temperature sensor firmware with cloud logging (renamed from the earlier DS18B20 sensor project).
 
-**Tech:** ESP8266 · C++ · PlatformIO · InfluxDB · DS18B20 · WiFi
+**Tech:** ESP8266 · ESP32 · C++ · PlatformIO · InfluxDB · DS18B20 · WiFi
 
 ### [🥧 Raspberry Pi Docker Infrastructure](https://github.com/aachtenberg/raspberry-pi-docker)
 Production self-hosted stack: InfluxDB, Grafana, Home Assistant, Prometheus, Nginx Proxy Manager, Cloudflare Tunnels.
@@ -67,4 +88,4 @@ Production self-hosted stack: InfluxDB, Grafana, Home Assistant, Prometheus, Ngi
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Andrew_Achtenberg-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/aachtenberg/)
 
-💡 *Always learning and always building. Right now I am exploring AI's role in SRE practices and community-data work where the stakes are real and the audience is actual neighbours.*
+💡 *Always learning and always building. Right now I am exploring AI's role in SRE practices — agents that investigate and propose, not ones that deploy without a human — and community-data work where the stakes are real and the audience is actual neighbours.*
