@@ -1,90 +1,46 @@
 # Hi, I'm Andrew 👋
 
-**Technical Lead | SRE & AI @ BMO** | Building reliable systems at scale | AI-Augmented Development
+**Technical Lead, SRE & AI @ BMO.** 20+ years in infrastructure and databases.
 
-## 🚀 Recent Work
+I build tools where AI does the legwork and a human keeps the merge button: database review, alert triage, PR review, and flood monitoring for my own stretch of river.
 
-Building infrastructure and tools across database reliability, AI-assisted SRE, IoT, observability, and community data:
+## 📌 Projects
 
-- **Second Look**: database performance snapshots for Oracle, PostgreSQL, MySQL/MariaDB, and SQL Server, compared against a baseline and reviewed by an AI model (or plain rules) into a short, severity-ranked write-up.
-- **CFOperator**: a self-hosted AI SRE agent that triages Alertmanager alerts, investigates with Prometheus/Loki/Kubernetes tools, and opens GitOps fix PRs (never mutates a live cluster). Local Ollama by default; no phone-home.
-- **agent-review**: an AI pull request reviewer for GitHub Actions that follows each change to the code that uses it, for cents per review.
-- **Ottawa River freshet case file**: community flood-monitoring stack for the Ottawa River watershed (TimescaleDB / PostgREST / k3s) with a public case file on post-2017 spring flood peaks at Lac Coulonge.
-- **Dynatrace DQL knowledge base**: reference docs, Copilot agents, and a RAG pipeline so LLMs produce working DQL instead of hallucinated queries.
+### [🔍 Second Look](https://github.com/aachtenberg/secondlook)
+Snapshots a database, compares it with a normal moment, and writes a short review of what changed and how to fix it. Oracle, PostgreSQL, MySQL/MariaDB, SQL Server.
 
-**What I learned:** AI tools such as Claude Code, GitHub Copilot, AWS Bedrock, and the Anthropic API are useful force multipliers for infrastructure work. I still steer the architecture, security, and reliability decisions, while using AI to speed up implementation, analysis, and review. Every change goes through a PR, and the model that wrote the code is never the one that reviews it. CFOperator, Second Look, and the freshet project push this further: scheduled agents for sweeps and daily briefs, RAG over past investigations and hydrometric records, and keeping a human on the merge button.
+### [🤖 CFOperator](https://github.com/aachtenberg/cfoperator)
+Self-hosted AI SRE agent. Triages alerts, investigates, and opens a GitOps fix PR. It never touches a live cluster.
 
-## 🛠️ Tech Stack
+### [🧐 agent-review](https://github.com/aachtenberg/agent-review)
+AI pull request reviewer for GitHub Actions. Follows each change to the code that uses it. Costs cents per review.
 
-**SRE/DevOps:** Terraform · Terragrunt · AWS CDK · OpenTofu · Kubernetes (k3s, EKS) · Docker · Dynatrace · Grafana · Prometheus · Loki · GitHub Actions · GitOps
-**Cloud:** AWS · Azure · GCP · OpenStack · OpenNebula · Cloudflare Tunnel
-**Databases:** Postgres · TimescaleDB · PostgREST · pgvector · Oracle (AWR/ADDM/ASH) · MySQL · MariaDB · SQL Server · InfluxDB · Cassandra
-**IoT/Embedded:** ESP32-S3 · ESP8266 · Raspberry Pi · LoRa · MQTT · C/C++ · PlatformIO · Arduino
-**Languages:** Python · Bash · C/C++ · Go · Java · JavaScript · TypeScript · HCL
-**AI Tools:** Claude Code · GitHub Copilot · AWS Bedrock · Anthropic API · OpenRouter · OpenCode · Ollama · MCP · RAG
-
-## 📌 Featured Projects
-
-### [🔍 Second Look: AI review of database performance snapshots](https://github.com/aachtenberg/secondlook)
-Takes a read-only performance snapshot of a database, stores it, compares it with a baseline (the previous run, or the same time last week), and writes a short review of what changed and what to do about it: slower or new heavy queries, plan changes, wait-class jumps, blocking, stale statistics. Runs on a schedule, on an alert, or by hand, and delivers to Slack, Teams, email, ntfy, Jira, Plane, or its own web view. With no model configured, the rules write the review, so there is always a result.
-
-**Tech:** Python · Oracle (AWR, ADDM, ASH) · PostgreSQL · MySQL/MariaDB · SQL Server · Anthropic / OpenAI-compatible models · MCP · Docker
-
-### [🤖 CFOperator: self-hosted AI SRE agent](https://github.com/aachtenberg/cfoperator)
-Alert → triage → investigate → propose a fix → open a GitOps PR → verify after merge. Runs on your hardware against your Prometheus; local Ollama is the default path. It never mutates a running cluster, so the merge button stays human.
-
-**Tech:** Python · Prometheus · Alertmanager · Loki · Kubernetes · Docker · Ollama · pgvector · GitOps
-
-### [🧐 agent-review: AI pull request reviewer](https://github.com/aachtenberg/agent-review)
-A GitHub Actions reviewer that reads the diff, greps for and reads what uses each change, and comments with what breaks, what is affected, and how to fix it. Runs in a locked-down container, skips fork PRs, and costs about $0.03 to $0.25 a review on OpenRouter (or nothing on a local Ollama model). I built it after finding hosted review subscriptions not worth it without bring-your-own-key.
-
-**Tech:** GitHub Actions · OpenCode · OpenRouter · Ollama · Docker
-
-### [🌊 Ottawa River Freshet: community flood monitoring + case file](https://github.com/aachtenberg/ottawa-river-freshet)
-Community-built flood-monitoring stack for the Ottawa River watershed, driven by a real need to document and statistically test a post-2017 regime change in spring flood peaks at Lac Coulonge, Quebec. The live dashboard at [freshet.xgrunt.com](https://freshet.xgrunt.com) brings Hydro-Québec, ECCC, MVCA, and Quebec Vigilance telemetry into a TimescaleDB / PostgREST stack on a homelab k3s cluster. The case file includes nine illustrated exhibits, four statistical tests, a daily plain-language brief generated by a scheduled Claude routine, and a calibrated seasonal probability forecast using Gaussian-kernel analog matching with post-2017 era weighting. It is built to be public, reproducible, opinionated, and falsifiable.
-
-**Tech:** TimescaleDB · PostgREST · k3s · Cloudflare Tunnel · Python (stdlib only) · Static HTML/SVG · Chart.js · GitHub Actions (auto-mirror) · Anthropic Claude routines · puppeteer (PNG render)
+### [🌊 Ottawa River Freshet](https://github.com/aachtenberg/ottawa-river-freshet)
+Community flood monitoring for the Ottawa River, plus a public case file testing whether spring flood peaks changed after 2017. Live at [freshet.xgrunt.com](https://freshet.xgrunt.com).
 
 ### [📚 Dynatrace DQL Knowledge Base](https://github.com/aachtenberg/dynatrace-dql-kb)
-DQL reference docs, `@dql-expert` / `@dashboard-builder` Copilot agents, and a RAG pipeline aimed at syntactically correct Dynatrace Query Language and Platform dashboard JSON.
+Reference docs, Copilot agents, and a RAG pipeline so LLMs write DQL that actually runs.
 
-**Tech:** Python · Dynatrace DQL · GitHub Copilot instructions · RAG
+### [🔌 snowq](https://github.com/aachtenberg/snow-query)
+Query ServiceNow's REST APIs by reusing an SSO browser session. No API user needed.
 
-### [🔌 snowq: ServiceNow REST via SSO session](https://github.com/aachtenberg/snow-query)
-Query ServiceNow's REST APIs from Python by reusing the cookies from an SSO browser login: no API user, OAuth client, or password. Sessions are stored locally like credentials.
+### 🧰 Also
 
-**Tech:** Python · Playwright · ServiceNow REST · SSO (SAML/OIDC)
+[Luna](https://github.com/aachtenberg/luna-voice-assistant) (local voice assistant) · [converse-tui](https://github.com/aachtenberg/converse-tui) (Bedrock chat in the terminal, Go) · [SquadMaps v2](https://github.com/aachtenberg/squadmaps-v2) (game map planner) · [LoRa sensors](https://github.com/aachtenberg/esp32-lora-sensor) · [ESP Sensor Hub](https://github.com/aachtenberg/esp-sensor-hub) · [Pi cameras](https://github.com/aachtenberg/raspberry-pi-camera-control) · [Pi Docker stack](https://github.com/aachtenberg/raspberry-pi-docker)
 
-### [🎙️ Luna Voice Assistant](https://github.com/aachtenberg/luna-voice-assistant)
-Self-hosted voice assistant with wake word, local STT/TTS, LLM fallback chain (Claude / Ollama / Groq), and smart-home tools. A privacy-first replacement for a cloud speaker.
+## 🛠️ Stack
 
-**Tech:** Python · OpenWakeWord · faster-whisper · Piper TTS · Ollama · MQTT / smart home
+**Platform:** Kubernetes · Terraform / OpenTofu · AWS · Azure · GitOps · Prometheus · Grafana · Dynatrace
+**Databases:** PostgreSQL · Oracle · MySQL · SQL Server · TimescaleDB · Cassandra
+**Code:** Python · Go · Bash · C/C++ · TypeScript
+**AI:** Claude Code · Bedrock · Ollama · OpenRouter · MCP · RAG
 
-### 🧰 More
+## 💼 Experience
 
-- [converse-tui](https://github.com/aachtenberg/converse-tui): terminal chat client for the Amazon Bedrock Converse API in Go, with streaming and prebuilt Linux/Windows binaries.
-- [SquadMaps v2](https://github.com/aachtenberg/squadmaps-v2): community rewrite of the Squad map viewer with an editor-free map data extraction pipeline, live at [squadmaps.xgrunt.com](https://squadmaps.xgrunt.com).
-- [Raspberry Pi Camera Control](https://github.com/aachtenberg/raspberry-pi-camera-control): multi-camera surveillance with web UI, HLS streaming, hardware H.264, and MQTT.
-- [ESP32 LoRa Sensor Network](https://github.com/aachtenberg/esp32-lora-sensor) and [gateway](https://github.com/aachtenberg/esp32-lora-gateway): long-range BME280 sensor nodes bridged to MQTT.
-- [ESP Sensor Hub](https://github.com/aachtenberg/esp-sensor-hub): multi-board ESP32/ESP8266 temperature firmware logging to InfluxDB.
-- [Raspberry Pi Docker](https://github.com/aachtenberg/raspberry-pi-docker): self-hosted InfluxDB, Grafana, Home Assistant, Prometheus, and Cloudflare Tunnel stack.
+- **BMO**, Technical Lead, SRE & AI (2023 to present)
+- **BlackBerry**, Senior Technical Manager, Enterprise Cloud & Data Platforms (2013 to 2019)
+- **BlackBerry / RIM**, BBM infrastructure, scaled to 100M+ users (2007 to 2012)
 
-## 💼 Experience Highlights
-
-- **BMO** - Technical Lead, SRE & AI (2023-Present)
-  - Leading high-availability systems design and practical AI-augmented engineering practices
-
-- **BlackBerry** - Senior Technical Manager (2013-2019)
-  - Led Enterprise Cloud & Data Platforms across AWS, Azure, and private clouds
-
-- **BlackBerry** - Senior Software Developer (2010-2012)
-  - Scaled BBM infrastructure to 100M+ users across distributed data centers
-
-- **Research In Motion** - Infrastructure Engineering Specialist (2007-2010)
-  - SME for BBM infrastructure and massively distributed cloud systems
-
-## 📫 Let's Connect
+## 📫 Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Andrew_Achtenberg-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/aachtenberg/)
-
-💡 *Always learning and always building. Right now I am exploring AI's role in SRE and database practices (agents that investigate and propose, not ones that deploy without a human) and community-data work where the stakes are real and the audience is actual neighbours.*
